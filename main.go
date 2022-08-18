@@ -2,6 +2,7 @@ package main
 
 import (
 	"gin-boiler-plate/db"
+	"gin-boiler-plate/middleware"
 	"gin-boiler-plate/router"
 	"github.com/gin-gonic/gin"
 	"log"
@@ -17,6 +18,7 @@ func main() {
 	app := gin.Default()
 
 	router.SetRoutes(app)
+	middleware.Set(app)
 
 	app.Run(":5500")
 }
